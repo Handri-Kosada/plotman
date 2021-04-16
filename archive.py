@@ -49,8 +49,8 @@ def compute_priority(phase, gb_free, n_plots):
 
 def get_archdir_freebytes(arch_cfg):
     archdir_freebytes = { }
-    ##adding custom port - Handri
-    df_cmd = ('ssh -p 49122 %s@%s df -BK | grep " %s/"' %
+    ##adding custom port - Handri Kosada
+    df_cmd = ('ssh -p 12022 %s@%s df -BK | grep " %s/"' %
         (arch_cfg['rsyncd_user'], arch_cfg['rsyncd_host'], arch_cfg['rsyncd_path']) )
     with subprocess.Popen(df_cmd, shell=True, stdout=subprocess.PIPE) as proc:
         for line in proc.stdout.readlines():
