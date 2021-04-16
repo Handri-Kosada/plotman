@@ -133,8 +133,8 @@ def archive(dir_cfg, all_jobs):
 
     bwlimit = arch_cfg['rsyncd_bwlimit']
     throttle_arg = ('--bwlimit=%d' % bwlimit) if bwlimit else ''
-    #custom rsync argument
-    cmd = ('rsync -avP -e 'ssh -p 49122'  -av --partial --inplace --append --progress --remove-source-files  %s %s %s' %
+    #custom rsync argument Handri Kosada
+    cmd = ('rsync -avP -e 'ssh -p 12022'  -av --partial --inplace --append --progress --remove-source-files  %s %s %s' %
             (throttle_arg, chosen_plot, rsync_dest(arch_cfg, archdir)))
 
     return (True, cmd)
